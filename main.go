@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+
+	"github.com/joho/godotenv"
+)
 
 func main() {
-	fmt.Println("Hello World")
+	godotenv.Load()
+	connectionstr:=os.Getenv("MONGO")
+	fmt.Println(connectionstr)
 }
