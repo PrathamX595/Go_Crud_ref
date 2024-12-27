@@ -1,7 +1,8 @@
 package controller
 
-import "net/http"
+import "github.com/gofiber/fiber/v2"
 
-func Create(w http.ResponseWriter, r *http.Request) {
+func Create(c *fiber.Ctx) error {
 
+	return c.JSON("")
 }

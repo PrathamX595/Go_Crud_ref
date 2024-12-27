@@ -1,11 +1,15 @@
 package controller
 
-import "net/http"
+import (
+	"github.com/gofiber/fiber/v2"
+)
 
-func Get(w http.ResponseWriter, r *http.Request) {
+func Get(c *fiber.Ctx) error {
 
+	return c.JSON("")
 }
 
-func GetAll(w http.ResponseWriter, r *http.Request) {
+func GetAll(c *fiber.Ctx) error {
 
+	return c.JSON("")
 }

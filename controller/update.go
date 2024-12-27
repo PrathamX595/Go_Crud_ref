@@ -1,7 +1,8 @@
 package controller
 
-import "net/http"
+import "github.com/gofiber/fiber/v2"
 
-func Update(w http.ResponseWriter, r *http.Request) {
+func Update(c *fiber.Ctx) error {
 
+	return c.JSON("")
 }

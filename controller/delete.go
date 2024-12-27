@@ -1,11 +1,15 @@
 package controller
 
-import "net/http"
+import (
+	"github.com/gofiber/fiber/v2"
+)
 
-func Delete(w http.ResponseWriter, r *http.Request) {
+func Delete(c *fiber.Ctx) error {
 
+	return nil
 }
 
-func DeleteAll(w http.ResponseWriter, r *http.Request) {
+func DeleteAll(c *fiber.Ctx) error {
 
+	return nil
 }

@@ -1,17 +1,20 @@
 package router
 
 import (
-	"github.com/gorilla/mux"
 	"crud/controller"
+
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/logger"
 )
 
-func Router() *mux.Router {
-	r := mux.NewRouter()
-	r.HandleFunc("/api/create", controller.Create).Methods("POST")
-	r.HandleFunc("/api/get", controller.GetAll).Methods("GET")
-	r.HandleFunc("/api/get/{id}", controller.Get).Methods("GET")
-	r.HandleFunc("/api/delete", controller.DeleteAll).Methods("DELETE")
-	r.HandleFunc("/api/delete/{id}", controller.Delete).Methods("DELETE")
+func Router(app *fiber.App) {
+	api := app.Group("/api", logger.New())
 
-	return r
+	api.Get("/", controller.GetAll)
+	api.Get("/{id}", controller.Get)
+	api.Post("/", controller.Create)
+	api.Put("/{id}", controller.Update)
+	api.Delete("/{id}", controller.Delete)
+	api.Delete("/", controller.DeleteAll)
+
 }
