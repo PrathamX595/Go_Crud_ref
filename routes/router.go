@@ -11,10 +11,10 @@ func Router(app *fiber.App) {
 	api := app.Group("/api", logger.New())
 
 	api.Get("/", controller.GetAll)
-	api.Get("/{id}", controller.Get)
+	api.Get("/:id", controller.Get)
 	api.Post("/", controller.Create)
-	api.Put("/{id}", controller.Update)
-	api.Delete("/{id}", controller.Delete)
+	api.Put("/:id", controller.Update)
+	api.Delete("/:id", controller.Delete)
 	api.Delete("/", controller.DeleteAll)
 
 }
