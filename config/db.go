@@ -14,13 +14,13 @@ var connectionStr string = GetEnv("MONGO")
 const dbName = "user"
 const colName = "goCRUD"
 
-var col *mongo.Collection
+var Col *mongo.Collection
 
 func Db() {
 	options := options.Client().ApplyURI(connectionStr)
 	client, err := mongo.Connect(context.TODO(), options)
 	utils.CheckErr(err)
 	fmt.Println("mongo connection success")
-	col = client.Database(dbName).Collection(colName)
-	fmt.Println("collection instance is ready, ", col)
+	Col = client.Database(dbName).Collection(colName)
+	fmt.Println("collection instance is ready, ", Col)
 }
